@@ -121,7 +121,7 @@ class RemoteIpgTest < Test::Unit::TestCase
   def test_failed_authorize
     response = @gateway.authorize(@amount, @declined_card, @options)
     assert_failure response
-    assert_equal 'DECLINED', response.message
+    assert_equal 'DECLINED, Do not honour', response.message
     assert_equal 'SGS-050005', response.error_code
   end
 
